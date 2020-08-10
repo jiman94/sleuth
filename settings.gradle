@@ -1,0 +1,10 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+}
+rootProject.name = 'sleuth'
+
+include 'common'
+include 'module-first'
+include 'module-second'
