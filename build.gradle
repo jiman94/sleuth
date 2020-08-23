@@ -36,6 +36,8 @@ subprojects {
             exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
         }
         compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-zipkin', version: '2.2.4.RELEASE'
+        implementation 'org.springframework.kafka:spring-kafka'
+        implementation 'org.springframework.boot:spring-boot-starter-web'
     }
 
     task initSourceFolders {
@@ -63,13 +65,23 @@ project(':common') {
 project(':module-first') {
     dependencies {
         compile project(':common')
-        implementation 'org.springframework.boot:spring-boot-starter-web'
     }
 }
 
 project(':module-second') {
     dependencies {
         compile project(':common')
-        implementation 'org.springframework.boot:spring-boot-starter-web'
+    }
+}
+
+project(':module-third') {
+    dependencies {
+        compile project(':common')
+    }
+}
+
+project(':module-fourth') {
+    dependencies {
+        compile project(':common')
     }
 }
